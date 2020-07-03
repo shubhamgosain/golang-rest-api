@@ -1,0 +1,12 @@
+{ 
+    "app" : {
+        "port" : 8082
+    },
+    "postgresdb": {
+        "host": "localhost",
+        "port": 5432,
+        "name": "orders",
+        "user": "test_user1",
+        "password": "1234"
+    }
+  }

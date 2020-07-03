@@ -1,0 +1,106 @@
+{
+    "cases" : [
+            {
+                "username":"Shanice",
+                "meal":"dinner",
+                "date": "2019-08-12",
+                "state": true
+            },
+            {
+                "username":"Rahul",
+                "meal":"lunch",
+                "date":"2019-08-12",
+                "state": true
+            },
+            {
+                "username":"Ranjeet",
+                "meal":"dinner",
+                "date": "2019-08-13",
+                "state": true
+            },
+            {
+                "username":"Roy",
+                "meal":"lunch",
+                "date":"2019-08-13",
+                "state": true
+            },
+            {
+                "username":"Jonny",
+                "meal":"dinner",
+                "date": "2019-08-14",
+                "state": true
+            },
+            {
+                "username":"Richard",
+                "meal":"lunch",
+                "date":"2019-08-14",
+                "state": true
+            },
+            {
+                "username":"Tino Best",
+                "meal":"Dinner",
+                "date": "2019-08-12",
+                "state": false
+            },
+            {
+                "username":"Chris",
+                "meal":"Lunch",
+                "date":"2019-08-12",
+                "state": false
+            },
+            {
+                "username":"Henry Ford",
+                "meal":"Dinner",
+                "date": "2019-08-13",
+                "state": false
+            },
+            {
+                "username":"Jackman",
+                "meal":"Lunch",
+                "date":"2019-08-13",
+                "state": false
+            },
+            {
+                "username":"Bieber",
+                "meal":"Dinner",
+                "date": "2019-08-14",
+                "state": false
+            },
+            {
+                "username":"Nicki",
+                "meal":"Lunch",
+                "date":"2019-08-14",
+                "state": false
+            },
+            {
+                "sername":"Eminem",
+                "meal":"lunch",
+                "date":"2019-08-14",
+                "state": false
+            },
+            {
+                "username":"Coldplay",
+                "meal":"lunch",
+                "date":"2019-08-16",
+                "state": true
+            },
+            {
+                "username":"Virat",
+                "meal":"lunch",
+                "date":"2019-0814",
+                "state": false
+            },
+            {
+                "username":"Abdelivilliers",
+                "meal":"lunch",
+                "date":"",
+                "state": false
+            },
+            {
+                "username":"Raju",
+                "meal":"lunch",
+                "date":"2019-08-14",
+                "state": true
+            }      
+    ]   
+}
