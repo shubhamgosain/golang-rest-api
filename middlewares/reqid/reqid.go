@@ -1,9 +1,10 @@
 package reqid
 
 import (
-	"net/http"
-	"fmt"
 	"context"
+	"fmt"
+	"net/http"
+
 	uuid "github.com/satori/go.uuid"
 )
 
@@ -19,8 +20,8 @@ func RequestID(next http.Handler) http.Handler {
 		ctx := r.Context()
 		requestID := r.Header.Get("X-Request-Id")
 		if requestID == "" {
-			u2,_:=uuid.NewV4()
-			requestID = fmt.Sprintf("%s",u2)
+			u2 := uuid.NewV4()
+			requestID = fmt.Sprintf("%s", u2)
 		}
 		ctx = context.WithValue(ctx, RequestIDKey, requestID)
 		next.ServeHTTP(w, r.WithContext(ctx))
