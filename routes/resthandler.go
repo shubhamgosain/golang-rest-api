@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"golang-rest-api/dboperations"
 	customlogger "golang-rest-api/logger"
+	"golang-rest-api/middlewares/prometheus"
 	"golang-rest-api/middlewares/reqid"
 	"golang-rest-api/response"
 	"io/ioutil"
@@ -15,6 +16,7 @@ import (
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 	"github.com/go-chi/render"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/sirupsen/logrus"
 )
 
@@ -97,9 +99,11 @@ func RestHandler(configFile string) {
 		r.Use(customlogger.Logger(logger))
 		r.Use(middleware.Recoverer)
 		r.Use(middleware.Timeout(60 * time.Second))
+		r.Use(prometheus.Metrics)
 		r.Get("/", readData)
 		r.Post("/", insertData)
 		r.Delete("/", deleteData)
 	})
+	r.Handle("/metrics", promhttp.Handler())
 	http.ListenAndServe(fmt.Sprintf(":%v", config.App.Port), r)
 }
