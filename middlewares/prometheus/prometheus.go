@@ -2,6 +2,7 @@ package prometheus
 
 import (
 	"net/http"
+	"strconv"
 	"time"
 
 	"github.com/go-chi/chi/middleware"
@@ -37,7 +38,7 @@ func Metrics(next http.Handler) http.Handler {
 		start := time.Now()
 		ww := middleware.NewWrapResponseWriter(w, r.ProtoMajor)
 		next.ServeHTTP(ww, r)
-		c.requestDuration.WithLabelValues("200", r.URL.Path, r.Method).Observe(float64(time.Since(start).Milliseconds()))
-		c.requestSize.WithLabelValues("200", r.URL.Path, r.Method).Observe(float64(ww.BytesWritten()))
+		c.requestDuration.WithLabelValues(strconv.Itoa(ww.Status()), r.URL.Path, r.Method).Observe(float64(time.Since(start).Milliseconds()))
+		c.requestSize.WithLabelValues(strconv.Itoa(ww.Status()), r.URL.Path, r.Method).Observe(float64(ww.BytesWritten()))
 	})
 }
