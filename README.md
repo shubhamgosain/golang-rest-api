@@ -45,12 +45,12 @@ Install postgres and import the database dump provided under db/orders.sql in 2 
 
 Update configs user config/ accordingly with the credentials. 
 
-Run test casea : 
+Run test cases : 
 
     $ go test 
     $ go test -bench=.
 
-If test cases are passed :
+To start the application :
 
     $ go run main.go
     
