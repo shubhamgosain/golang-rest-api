@@ -1,8 +1,8 @@
 # Golang-rest-api
 
-This is a simple REST API implementation in golang build around all the necessary elements for a stable robust API. 
+This is a simple REST API in golang build around all basic elements required in an API. 
 
-As far as its features is concerned it is providing an endpoint for read,write and delete over a database. But what more important is its package structuring, responses, logging and testing. It covers all these sections quite well.
+As far as its features are concerned, it provides endpoints for read,write and delete over a postgresql database.
 
 
 Default Port : 8082
@@ -21,29 +21,29 @@ FETCH Records :
   
 Add Record    : 
 
-    $ curl -X POST -d '{"username":"Master Gogo","meal":"dinner","date":"2019-08-12"}' http://localhost:8082/orders
+    $ curl -X POST -d '{"username":"slasher","meal":"dinner","date":"2019-08-12"}' http://localhost:8082/orders
   
 DELETE Record : 
 
-    $ curl -X DELETE -d '{"username":"Master Gogo","meal":"dinner","date":"2019-08-12"}' http://localhost:8082/orders
+    $ curl -X DELETE -d '{"username":"slasher","meal":"dinner","date":"2019-08-12"}' http://localhost:8082/orders
 
 
 # Start Application
 
-You can start this application either with manual go commands which will require a golang installation on your system along with a postgre database.
+You can start the application either manually which will require a golang installation on your system along with a postgres database.
 
 Or
 
-You can pull the docker image from docker hub and start the container where everything will be pre cooked.
+You can run the docker image.
 
 https://hub.docker.com/r/shubham1962/golang-rest-api
 
 # Run Manually
-Clone the project repository. If its not cloned in your gopath then set a gopath for the repo folder.
+Clone the repository. If its not cloned in your GOPATH then set it for the repo folder.
 
-Install postgres and import the database dump provided under db/orders.sql in 2 different databases. One for application and one for test cases.
+Install postgresql and import database dump provided under db/orders.sql.
 
-Update configs user config/ accordingly with the credentials. 
+Update config under /config accordingly with the credentials. 
 
 Run test cases : 
 
@@ -61,10 +61,6 @@ or
               
               
 # Docker
-
-  Pull image
-  
-    $ docker pull shubham1962/golang-rest-api
 
   Run container
   
